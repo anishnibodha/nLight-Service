@@ -155,7 +155,7 @@
 					            <td data-title="'Lotitude'">{{crime.lotitude}}</td>
 					            <td data-title="'Latitude'">{{crime.latitude}}</td>
 					            <td data-title="'Resolve'">
-					            <span ng-if="checkLightEn(light.lightStatus)"><button ng-click="disableLight(light.id)" class="btn btn-danger btn-xs">Disable Light</button></span>
+					            <button ng-click="takeActionCrime(crime.id)" class="btn btn-danger btn-xs">Take Action</button>
 					            </td>
 					        </tr>
 					        </table>

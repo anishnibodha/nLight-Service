@@ -35,8 +35,8 @@ public class CrimeController {
 		return new ObjectMapper().writeValueAsString(crimeUpdateList);
 	}
 	
-	@RequestMapping("/changeStatus/{crimeId}")
-	public String changeStatus(Long crimeId) throws JsonProcessingException{
+	@RequestMapping("/takeAction/{crimeId}")
+	public String changeStatus(@PathVariable("crimeId") Long crimeId) throws JsonProcessingException{
 		lightService.closeCrime(crimeId);
 		return "success";
 	}

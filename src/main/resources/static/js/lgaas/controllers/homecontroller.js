@@ -7,6 +7,15 @@
 var HomeController = function($scope, $http,$modal,sharedservice,ngTableParams) {
 	$scope.items = ['item1', 'item2', 'item3'];
 	
+	$scope.takeActionCrime = function(crimeid){
+
+		var page = "/crime/takeAction/"+crimeid;
+  	  $http.get(page).success(function(response) {
+  		  alert("success")
+    	})
+		
+	}
+	
 	$scope.checkLightEn = function(status){
 		if(status == "none"){
 			return false;
@@ -172,7 +181,7 @@ var HomeController = function($scope, $http,$modal,sharedservice,ngTableParams) 
     	var page = "/crime/alllist";
     	  $http.get(page).success(function(response) {
     		  var data = response;
-    		  $scope.lightParams = new ngTableParams({
+    		  $scope.crimeReports = new ngTableParams({
     		        page: 1,            // show first page
     		        count: 10           // count per page
     		    }, {
@@ -274,4 +283,6 @@ angular.module('nlight').controller('AddActivationController', function ($scope,
 	$scope.cancel = function () {
 		$modalInstance.dismiss('cancel');
 	};
+	
+	
 });

@@ -56,7 +56,7 @@ public class LightService {
 		light1.setDevicename(device1);
 		light1.setTimestamp("20/01/2015 11:58 AM");
 		
-		Light light2 = new Light();
+		/*Light light2 = new Light();
 		light2.setId(2L);
 		light2.setLightlat("12.88765579");
 		light2.setLightlot("13.0887866");
@@ -315,11 +315,11 @@ public class LightService {
 		light21.setName("SV_L21");
 		light21.setDevicename(device1);
 		light21.setTimestamp("20/01/2015 11:58 AM");
-		
+		*/
 		deviceDao.save(device1);
 		activationKeyDao.save(activationKey1);
 		lightDao.save(light1);
-		lightDao.save(light2);
+		/*lightDao.save(light2);
 		lightDao.save(light3);
 		lightDao.save(light4);
 		lightDao.save(light5);
@@ -339,7 +339,7 @@ public class LightService {
 		lightDao.save(light19);
 		lightDao.save(light20);
 		lightDao.save(light21);
-
+*/
 		
 		
 		
