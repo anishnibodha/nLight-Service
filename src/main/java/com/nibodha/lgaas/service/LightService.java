@@ -1,5 +1,6 @@
 package com.nibodha.lgaas.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -388,6 +389,21 @@ public class LightService {
 		crimeUpdateEntity.setLotitude(longitude);
 		crimeUpdateEntity.setStatus("Active");
 		crimeUpdateEntityDao.save(crimeUpdateEntity);
+		
+	}
+	public List<CrimeUpdateEntity> findCrimeList() {
+		// TODO Auto-generated method stub
+		List<CrimeUpdateEntity> actualCrimeList = new ArrayList();
+		List<CrimeUpdateEntity> fullList = crimeUpdateEntityDao.findAll();
+		for(CrimeUpdateEntity eachList : fullList){
+			actualCrimeList.add(eachList);
+		}
+		return actualCrimeList;
+	}
+	public void closeCrime(Long crimeId) {
+		// TODO Auto-generated method stub
+		CrimeUpdateEntity crimeUpdate = crimeUpdateEntityDao.findOne(crimeId);
+		crimeUpdateEntityDao.delete(crimeId);
 		
 	}
 	

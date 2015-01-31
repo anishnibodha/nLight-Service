@@ -141,6 +141,28 @@
             <!-- /widget-content --> 
           </div>
           <!-- /widget -->
+          
+            <!-- /widget -->
+          <div class="widget widget-table action-table">
+            <div class="widget-header"> <i class="icon-th-list"></i>
+              <h3>Accident Areas</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+            <table ng-table="crimeReports" class="table table-striped table-bordered">
+					        <tr ng-repeat="crime in $data">
+					            <td data-title="'Id'">{{crime.id}}</td>
+					            <td data-title="'Lotitude'">{{crime.lotitude}}</td>
+					            <td data-title="'Latitude'">{{crime.latitude}}</td>
+					            <td data-title="'Resolve'">
+					            <span ng-if="checkLightEn(light.lightStatus)"><button ng-click="disableLight(light.id)" class="btn btn-danger btn-xs">Disable Light</button></span>
+					            </td>
+					        </tr>
+					        </table>
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget -->
         
         </div>
         <!-- /span6 -->
