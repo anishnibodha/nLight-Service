@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nibodha.lgaas.dao.ActivationKeyDao;
+import com.nibodha.lgaas.dao.CrimeUpdateEntitiyDao;
 import com.nibodha.lgaas.dao.DeviceDao;
 import com.nibodha.lgaas.dao.LightDao;
 import com.nibodha.lgaas.entity.ActivationKey;
+import com.nibodha.lgaas.entity.CrimeUpdateEntity;
 import com.nibodha.lgaas.entity.Device;
 import com.nibodha.lgaas.entity.Light;
 
@@ -25,6 +27,9 @@ public class LightService {
 	
 	@Autowired
 	private ActivationKeyDao activationKeyDao;
+	
+	@Autowired
+	private CrimeUpdateEntitiyDao crimeUpdateEntityDao;
 	
 	public void saveInitialLight(){
 		Device device1 = new Device();
@@ -374,6 +379,15 @@ public class LightService {
 				e.printStackTrace();
 			}
 		}
+		
+	}
+	public void newCrimeUpdate(String longitude, String latitude) {
+		// TODO Auto-generated method stub
+		CrimeUpdateEntity crimeUpdateEntity = new CrimeUpdateEntity();
+		crimeUpdateEntity.setLatitude(latitude);
+		crimeUpdateEntity.setLotitude(longitude);
+		crimeUpdateEntity.setStatus("Active");
+		crimeUpdateEntityDao.save(crimeUpdateEntity);
 		
 	}
 	
