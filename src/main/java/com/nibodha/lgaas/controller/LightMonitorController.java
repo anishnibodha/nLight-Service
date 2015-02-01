@@ -58,7 +58,7 @@ public class LightMonitorController {
 		return null;
 	}
 	
-	@RequestMapping("/turnonlight/{lightid}")
+	@RequestMapping("/autoconfigon/{lightid}")
 	public String autoconfigon(@PathVariable("lightid") Long lightid){
 		lightActionService.autoconfigon(lightid);
 		return null;
