@@ -151,29 +151,32 @@ public class LightActionService {
 			return "hejorhoiu38";
 		}
 
-		public void turnofflight(Long lightid) {
+		public void turnofflight(Long lightid) throws Exception {
 			// TODO Auto-generated method stub
+			blinkLight(0L, lightid, "fdfdf");
 			Light light = lightDao.findOne(lightid);
 			light.setLightStatus("icon_light light_off");
 			lightDao.save(light);
 		}
 
-		public void turnonlight(Long lightid) {
+		public void turnonlight(Long lightid) throws Exception {
 			// TODO Auto-generated method stub
+			blinkLight(4L, lightid, "fdfdf");
 			Light light = lightDao.findOne(lightid);
 			light.setLightStatus("icon_light light_on");
 			lightDao.save(light);
 			
 		}
 
-		public void autoconfigon(Long lightid) {
+		public void autoconfigon(Long lightid) throws Exception {
 			// TODO Auto-generated method stub
+			blinkLight(5L, lightid, "fdfdf");
 			
 		}
 
-		public void autoconfigoff(Long lightid) {
+		public void autoconfigoff(Long lightid) throws Exception {
 			// TODO Auto-generated method stub
-			
+			blinkLight(4L, lightid, "fdfdf");
 		}
 		
 	
