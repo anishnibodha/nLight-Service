@@ -53,6 +53,7 @@ public class LightActionService {
 	 
 			HttpResponse response = client.execute(post);
 			System.out.println("\nSending 'POST' request to URL : " + url);
+			System.out.println("POST Requesting Level " +level);
 			System.out.println("Post parameters : " + post.getEntity());
 			System.out.println("Response Code : " + 
 	                                    response.getStatusLine().getStatusCode());
