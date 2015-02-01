@@ -47,25 +47,25 @@ public class LightMonitorController {
 	}
 	
 	@RequestMapping("/turnofflight/{lightid}")
-	public String turnofflight(@PathVariable("lightid") Long lightid){
+	public String turnofflight(@PathVariable("lightid") Long lightid) throws Exception{
 		lightActionService.turnofflight(lightid);
 		return null;
 	}
 	
 	@RequestMapping("/turnonlight/{lightid}")
-	public String turnonlight(@PathVariable("lightid") Long lightid){
+	public String turnonlight(@PathVariable("lightid") Long lightid) throws Exception{
 		lightActionService.turnonlight(lightid);
 		return null;
 	}
 	
 	@RequestMapping("/autoconfigon/{lightid}")
-	public String autoconfigon(@PathVariable("lightid") Long lightid){
+	public String autoconfigon(@PathVariable("lightid") Long lightid) throws Exception{
 		lightActionService.autoconfigon(lightid);
 		return null;
 	}
 	
 	@RequestMapping("/autoconfigoff/{lightid}")
-	public String autoconfigoff(@PathVariable("lightid") Long lightid){
+	public String autoconfigoff(@PathVariable("lightid") Long lightid) throws Exception{
 		lightActionService.autoconfigoff(lightid);
 		return null;
 	}
