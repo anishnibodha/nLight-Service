@@ -46,6 +46,30 @@ public class LightMonitorController {
 		return null;
 	}
 	
+	@RequestMapping("/turnofflight/{lightid}")
+	public String turnofflight(@PathVariable("lightid") Long lightid){
+		lightActionService.turnofflight(lightid);
+		return null;
+	}
+	
+	@RequestMapping("/turnonlight/{lightid}")
+	public String turnonlight(@PathVariable("lightid") Long lightid){
+		lightActionService.turnonlight(lightid);
+		return null;
+	}
+	
+	@RequestMapping("/turnonlight/{lightid}")
+	public String autoconfigon(@PathVariable("lightid") Long lightid){
+		lightActionService.autoconfigon(lightid);
+		return null;
+	}
+	
+	@RequestMapping("/autoconfigoff/{lightid}")
+	public String autoconfigoff(@PathVariable("lightid") Long lightid){
+		lightActionService.autoconfigoff(lightid);
+		return null;
+	}
+	
 	@RequestMapping("/allight/{activationkey}")
 	public String getAllLightInfo(@PathVariable("activationkey") String activationkey) throws JsonGenerationException, JsonMappingException, IOException{
 		List<Light> lightList = lightActionService.getAllLight(activationkey);

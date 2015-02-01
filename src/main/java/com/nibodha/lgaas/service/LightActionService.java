@@ -150,6 +150,31 @@ public class LightActionService {
 			// TODO Auto-generated method stub
 			return "hejorhoiu38";
 		}
+
+		public void turnofflight(Long lightid) {
+			// TODO Auto-generated method stub
+			Light light = lightDao.findOne(lightid);
+			light.setLightStatus("icon_light light_off");
+			lightDao.save(light);
+		}
+
+		public void turnonlight(Long lightid) {
+			// TODO Auto-generated method stub
+			Light light = lightDao.findOne(lightid);
+			light.setLightStatus("icon_light light_on");
+			lightDao.save(light);
+			
+		}
+
+		public void autoconfigon(Long lightid) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		public void autoconfigoff(Long lightid) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 	
 
